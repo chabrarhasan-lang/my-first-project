@@ -1,0 +1,25 @@
+# Deployment specification only; this file has not created a Render service.
+services:
+  - type: web
+    name: case92-lead-ingest
+    runtime: docker
+    plan: free
+    region: oregon
+    autoDeployTrigger: "off"
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    envVars:
+      - key: BRIDGE_INGEST_TOKEN
+        generateValue: true
+      - key: BRIDGE_LIVE_ENABLED
+        value: "false"
+      - key: ZOHO_ACCOUNTS_URL
+        sync: false
+      - key: ZOHO_API_DOMAIN
+        sync: false
+      - key: ZOHO_CLIENT_ID
+        sync: false
+      - key: ZOHO_CLIENT_SECRET
+        sync: false
+      - key: ZOHO_REFRESH_TOKEN
+        sync: false

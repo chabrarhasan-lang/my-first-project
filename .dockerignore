@@ -1,0 +1,12 @@
+.git
+.github
+.env
+.env.*
+__pycache__
+*.pyc
+.venv
+venv
+tests
+reports
+*.log
+*-summary.json
